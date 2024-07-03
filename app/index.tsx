@@ -1,34 +1,33 @@
-// Calculadora.js
 import React, { useState } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 import Number from '@/components/Button';
 import Panel from '@/components/Panel';
-import Title from "@/components/Title";
 
 const app = () => {
-    const [value, setValor] = useState('');
+    const [value, setValue] = useState('');
 
     const updateValue = (opt: string) => {
         if (opt === 'A') {
-            return setValor('');
+            return setValue('');
         } else if (opt === 'C') {
-            return setValor(value.slice(0, -1));
+            setValue(prevValue => typeof prevValue === 'string' ? prevValue.slice(0, -1) : '');
         } else if (opt === '=') {
             try {
-                setValor(eval(value));
+                const result = eval(value).toString();
+                setValue(result);
             } catch (e) {
-                setValor('ERROR');
+                setValue('ERROR');
             }
+        } else {
+            setValue(prevValue => prevValue + opt);
             return;
         }
-        setValor(value + opt);
     };
 
     const numbers = ['A', 'C', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '', '0', '.', '='];
 
     return (
         <View style={styles.container}>
-            <Title title="CALCULEX" />
             <Panel value={value}></Panel>
             <FlatList
                 data={numbers}
@@ -37,6 +36,7 @@ const app = () => {
                 renderItem={({ item }) => (
                     <Number num={item} updateValue={updateValue} />
                 )}
+                style={styles.flatList}
             />
         </View>
     );
@@ -47,7 +47,9 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 20,
+    },
+    flatList: {
+        flexGrow: 0,
     },
 });
 

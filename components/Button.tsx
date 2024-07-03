@@ -25,11 +25,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#000000',
         margin: 5,
-        borderRadius: 100,
+        borderRadius: 50,
     },
     text: {
         fontFamily: 'Roboto',
-        fontSize: 55,
+        fontSize: 50,
         fontWeight: 'bold',
         color: '#FFE300',
     },
