@@ -1,26 +1,25 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-interface CenteredTitleProps {
-    title: string,
-    style?: { fontSize: number }
+interface PanelProps {
+    value: string;
 }
 
-const Title: React.FC<CenteredTitleProps> = ({title}) => {
+const Panel: React.FC<PanelProps> = ({value}) => {
     return (
         <View>
-            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.panel}>{value}</Text>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    title: {
+    panel: {
         fontFamily: 'Roboto',
         fontSize: 48,
         fontWeight: 'bold',
-        textAlign: 'center',
+        margin: 50,
     },
 });
 
-export default Title;
+export default Panel;
