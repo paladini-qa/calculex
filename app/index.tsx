@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 import Number from '@/components/Button';
 import Panel from '@/components/Panel';
+import Title from '@/components/Title';
 
 const app = () => {
     const [value, setValue] = useState('');
@@ -28,6 +29,7 @@ const app = () => {
 
     return (
         <View style={styles.container}>
+            <Title title='CALCULEX'></Title>
             <Panel value={value}></Panel>
             <FlatList
                 data={numbers}
@@ -45,8 +47,9 @@ const app = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
+        margin: 20,
     },
     flatList: {
         flexGrow: 0,

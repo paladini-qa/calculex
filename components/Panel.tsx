@@ -18,7 +18,12 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto',
         fontSize: 48,
         fontWeight: 'bold',
-        margin: 50,
+        margin: 25,
+        backgroundColor: '#f0f0f0',
+        borderRadius: 10,
+        padding: 10,
+        textAlign: 'right',
+        width: 320,
     },
 });
 
