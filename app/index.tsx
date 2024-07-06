@@ -20,6 +20,8 @@ const app = () => {
                 setValue('ERROR');
                 setTimeout(() => setValue(''), 1000);
             }
+        } else if (opt === '%') {
+            // TODO: Implement percentage
         } else {
             setValue(prevValue => prevValue + opt);
             return;

@@ -17,6 +17,8 @@ const Number: React.FC<NumberProps> = ({ num, updateValue }) => {
                 return  <Text style={styles.equal}>{num}</Text>;
             case '/':
                 return <ImageBackground source={require('../assets/images/divide.png')} style={styles.fullSize} />;
+            case '':
+                return;
             default:
                 return <Text style={styles.text}>{num}</Text>;
         }
