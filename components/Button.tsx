@@ -19,8 +19,8 @@ const Number: React.FC<NumberProps> = ({ num, updateValue }) => {
 
 const styles = StyleSheet.create({
     number: {
-        width: 75,
-        height: 75,
+        width: 80,
+        height: 80,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#000000',
@@ -29,8 +29,9 @@ const styles = StyleSheet.create({
     },
     text: {
         fontFamily: 'Roboto',
-        fontSize: 50,
+        fontSize: 59.2,
         fontWeight: 'bold',
+        fontStyle: 'italic',
         color: '#FFE300',
     },
 });

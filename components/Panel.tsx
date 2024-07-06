@@ -17,13 +17,9 @@ const styles = StyleSheet.create({
     panel: {
         fontFamily: 'Roboto',
         fontSize: 48,
-        fontWeight: 'bold',
-        margin: 25,
-        backgroundColor: '#f0f0f0',
-        borderRadius: 10,
-        padding: 10,
+        fontWeight: 'regular',
         textAlign: 'right',
-        width: 320,
+        width: 365,
     },
 });
 
