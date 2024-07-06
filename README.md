@@ -1,4 +1,4 @@
-# Welcome Calculex 👋
+# Welcome to Calculex 👋
 
 An simple app to calculate all of your problems
 
