@@ -27,7 +27,13 @@ const app = () => {
                 break;
 
             case '%':
-                // TODO: Implement percentage
+                try {
+                    const result = (parseFloat(value) / 100).toString();
+                    setValue(result);
+                } catch (e) {
+                    setValue('ERROR');
+                    setTimeout(() => setValue(''), 1000);
+                }
                 break;
 
             case '.':
@@ -37,25 +43,25 @@ const app = () => {
                 break;
 
             case '+':
-                if (!value.slice(-1).match(/[+\-*/]/)) {
+                if (!value.slice(-1).match(/[.+\-*/]/)) {
                     setValue(prevValue => prevValue + opt);
                 }
                 break;
 
             case '-':
-                if (!value.slice(-1).match(/[+\-*/]/)) {
+                if (!value.slice(-1).match(/[.+\-*/]/)) {
                     setValue(prevValue => prevValue + opt);
                 }
                 break;
 
             case '*':
-                if (!value.slice(-1).match(/[+\-*/]/)) {
+                if (!value.slice(-1).match(/[.+\-*/]/)) {
                     setValue(prevValue => prevValue + opt);
                 }
                 break;
 
             case '/':
-                if (!value.slice(-1).match(/[+\-*/]/)) {
+                if (!value.slice(-1).match(/[.+\-*/]/)) {
                     setValue(prevValue => prevValue + opt);
                 }
                 break;
