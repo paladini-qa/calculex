@@ -8,7 +8,7 @@ const app = () => {
     const [value, setValue] = useState('');
 
     const updateValue = (opt: string) => {
-        if (opt === 'A') {
+        if (opt === 'AC') {
             return setValue('');
         } else if (opt === 'C') {
             setValue(prevValue => prevValue.slice(0, -1));
@@ -18,6 +18,7 @@ const app = () => {
                 setValue(result);
             } catch (e) {
                 setValue('ERROR');
+                setTimeout(() => setValue(''), 1000);
             }
         } else {
             setValue(prevValue => prevValue + opt);
