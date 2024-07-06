@@ -1,6 +1,6 @@
 # Welcome Calculex 👋
 
-An app to calculate all of your problems
+An simple app to calculate all of your problems
 
 ## Get started
 
@@ -15,5 +15,5 @@ An app to calculate all of your problems
    ```bash
     npx expo start
    ```
-   
+## Ready to go 🥳
 
