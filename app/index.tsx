@@ -8,27 +8,66 @@ const app = () => {
     const [value, setValue] = useState('');
 
     const updateValue = (opt: string) => {
-        if (opt === 'AC') {
-            return setValue('');
-        } else if (opt === 'C') {
-            setValue(prevValue => prevValue.slice(0, -1));
-        } else if (opt === '=') {
-            try {
-                const result = eval(value).toString();
-                setValue(result);
-            } catch (e) {
-                setValue('ERROR');
-                setTimeout(() => setValue(''), 1000);
-            }
-        } else if (opt === '%') {
-            // TODO: Implement percentage
-        } else {
-            setValue(prevValue => prevValue + opt);
-            return;
+        switch (opt) {
+            case 'AC':
+                return setValue('');
+
+            case 'C':
+                setValue(prevValue => prevValue.slice(0, -1));
+                break;
+
+            case '=':
+                try {
+                    const result = eval(value).toString();
+                    setValue(result);
+                } catch (e) {
+                    setValue('ERROR');
+                    setTimeout(() => setValue(''), 1000);
+                }
+                break;
+
+            case '%':
+                // TODO: Implement percentage
+                break;
+
+            case '.':
+                if (!value.endsWith('.') && !value.slice(-1).match(/[+\-*/]/)) {
+                    setValue(prevValue => prevValue + opt);
+                }
+                break;
+
+            case '+':
+                if (!value.slice(-1).match(/[+\-*/]/)) {
+                    setValue(prevValue => prevValue + opt);
+                }
+                break;
+
+            case '-':
+                if (!value.slice(-1).match(/[+\-*/]/)) {
+                    setValue(prevValue => prevValue + opt);
+                }
+                break;
+
+            case '*':
+                if (!value.slice(-1).match(/[+\-*/]/)) {
+                    setValue(prevValue => prevValue + opt);
+                }
+                break;
+
+            case '/':
+                if (!value.slice(-1).match(/[+\-*/]/)) {
+                    setValue(prevValue => prevValue + opt);
+                }
+                break;
+
+            default:
+                setValue(prevValue => prevValue + opt);
+                break;
         }
     };
 
-    const numbers = ['AC', 'C', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '', '0', '.', '='];
+
+    const characters = ['AC', 'C', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '', '0', '.', '='];
 
     return (
         <View style={styles.container}>
@@ -36,7 +75,7 @@ const app = () => {
             <View style={styles.panel}>
             <Panel value={value}></Panel>
             <FlatList
-                data={numbers}
+                data={characters}
                 numColumns={4}
                 keyExtractor={(item) => item}
                 renderItem={({ item }) => (
