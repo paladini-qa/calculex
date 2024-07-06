@@ -15,5 +15,11 @@ An simple app to calculate all of your problems
    ```bash
     npx expo start
    ```
+3. Connect your device or emulator
+
+
+4. Press a to open Android device or emulator, or i to open iOS emulator.
+
+
 ## Ready to go 🥳
 
