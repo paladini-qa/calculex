@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: 'Roboto',
         fontSize: 48,
-        fontWeight: 'bold',
+        fontWeight: 'regular',
         textAlign: 'center',
     },
 });

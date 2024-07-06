@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
-import Number from '@/components/Button';
+import Number from '@/components/Number';
 import Panel from '@/components/Panel';
 import Title from '@/components/Title';
 
@@ -25,11 +25,11 @@ const app = () => {
         }
     };
 
-    const numbers = ['A', 'C', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '', '0', '.', '='];
+    const numbers = ['AC', 'C', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '', '0', '.', '='];
 
     return (
         <View style={styles.container}>
-            <Title title='CALCULEX'></Title>
+            <Title title='Calculex'></Title>
             <View style={styles.panel}>
             <Panel value={value}></Panel>
             <FlatList
